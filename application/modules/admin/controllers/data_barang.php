@@ -2,12 +2,24 @@
 
 class Data_barang extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+
+        if ($this->session->userdata('role_id') != '1') {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Anda Belum Login!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+          </div>');
+            redirect('login/auth/login');
+        }
+    }
     public function index()
     {
         $data['barang'] = $this->model_barang->tampil_data()->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
-        $this->load->view('admin/data_barang', $data);
+        $this->load->view('admin/vdata_barang', $data);
         $this->load->view('templates_admin/footer');
     }
 
@@ -61,7 +73,7 @@ class Data_barang extends CI_Controller
     {
         $id                 = $this->input->post('id_brg');
         $nama_brg           = $this->input->post('nama_brg');
-        $keterangan         = $this->input->post('keterangan ');
+        $keterangan         = $this->input->post('keterangan');
         $kategori           = $this->input->post('kategori');
         $harga              = $this->input->post('harga');
         $stok               = $this->input->post('stok');

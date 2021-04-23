@@ -24,7 +24,7 @@
                 <td><?php echo $brg->harga ?></td>
                 <td><?php echo $brg->stok ?></td>
                 <td>
-                    <div class="btn btn-succes btn-sm"><i class="fas fa-search-plus"></i></div>
+                    <div class="btn btn-success btn-sm"><i class="fas fa-search-plus"></i></div>
                 </td>
                 <td><?php echo anchor('admin/data_barang/edit/' . $brg->id_brg, '<div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>') ?>
                 </td>
@@ -60,7 +60,15 @@
 
                     <div class="form-group">
                         <label>Kategori</label>
-                        <input type="text" name="kategori" class="form-control">
+                        <select class="form-control" name="kategori">
+                            <option>Mouse Gaming</option>
+                            <option>Keyboard Gaming</option>
+                            <option>Monitor Gaming</option>
+                            <option>Headset Gaming</option>
+                            <option>Kursi Gaming</option>
+                            <option>Gamepad</option>
+                            <option>Aksesoris</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
