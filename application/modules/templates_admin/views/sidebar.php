@@ -33,6 +33,13 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('admin/users') ?>">
+                    <i class="fas fa-fw fa-user-cog"></i>
+                    <span>Manajemen User</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('admin/invoice') ?>">
                     <i class="fas fa-fw fa-file-invoice"></i>
                     <span>Invoices</span></a>

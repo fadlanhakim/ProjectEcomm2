@@ -36,6 +36,12 @@
 
     </table>
 </div>
+<div class="row">
+    <div class="col">
+        <?php echo $pagination; ?>
+    </div>
+</div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="tambah_barang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

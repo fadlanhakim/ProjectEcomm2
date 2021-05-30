@@ -1,22 +1,20 @@
 <?php
 
-class Model_barang extends CI_Model
+class Model_user extends CI_Model
 {
-    public function tampil_data($limit, $start)
-    {
-        return $this->db->get('tb_barang', $limit, $start);
-    }
 
-    public function tambah_barang($data, $table)
+    public function tampil_data()
+    {
+        return $this->db->get('tb_user');
+    }
+    public function tambah_user($data, $table)
     {
         $this->db->insert($table, $data);
     }
-
-    public function edit_barang($where, $table)
+    public function edit_user($where, $table)
     {
         return $this->db->get_where($table, $where);
     }
-
     public function update_data($where, $data, $table)
     {
         $this->db->where($where);
@@ -31,9 +29,9 @@ class Model_barang extends CI_Model
 
     public function find($id)
     {
-        $result = $this->db->where('id_brg', $id)
+        $result = $this->db->where('id', $id)
             ->limit(1)
-            ->get('tb_barang');
+            ->get('tb_user');
         if ($result->num_rows() > 0) {
             return $result->row();
         } else {
